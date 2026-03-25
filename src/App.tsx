@@ -9,9 +9,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import Process from './components/Process';
+import Team from './components/Team';
 import Stats from './components/Stats';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -38,6 +41,12 @@ export default function App() {
           <Services />
         </div>
         <div data-scroll-section>
+          <Process />
+        </div>
+        <div data-scroll-section>
+          <Team />
+        </div>
+        <div data-scroll-section>
           <Stats />
         </div>
         <div data-scroll-section>
@@ -45,6 +54,9 @@ export default function App() {
         </div>
         <div data-scroll-section>
           <Testimonials />
+        </div>
+        <div data-scroll-section>
+          <FAQ />
         </div>
         <div data-scroll-section>
           <Contact />

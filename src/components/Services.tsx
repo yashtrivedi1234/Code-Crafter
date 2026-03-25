@@ -61,16 +61,23 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              whileHover={{ y: -10 }}
+              initial="initial"
+              whileInView="animate"
+              whileHover="hover"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={{
+                initial: { opacity: 0 },
+                animate: { opacity: 1, transition: { duration: 0.5, delay: index * 0.1 } },
+                hover: { y: -10 }
+              }}
               className="group p-12 bg-white hover:bg-primary transition-all duration-500 cursor-pointer border-b border-slate-100 lg:border-r last:border-r-0"
             >
               <div className="flex justify-between items-start mb-12">
                 <motion.div 
-                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  variants={{
+                    hover: { rotate: 15, scale: 1.15 }
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center text-white shadow-lg group-hover:bg-white group-hover:text-primary transition-all duration-500`}
                 >
                   <service.icon className="w-8 h-8" />

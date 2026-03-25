@@ -12,13 +12,15 @@ const Hero = () => {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [0.03, 0]);
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
       {/* Background Text - Editorial Style */}
       <motion.div 
-        style={{ y: y2 }}
-        className="absolute top-1/4 left-0 w-full select-none pointer-events-none opacity-[0.03] overflow-hidden whitespace-nowrap"
+        style={{ y: y2, scale, opacity: bgOpacity }}
+        className="absolute top-1/4 left-0 w-full select-none pointer-events-none overflow-hidden whitespace-nowrap"
       >
         <span className="text-[25vw] font-black uppercase leading-none">CRAFTING DIGITAL</span>
       </motion.div>
@@ -49,7 +51,7 @@ const Hero = () => {
                 Code Crafter Web Solutions is a boutique agency specializing in high-performance web applications and bespoke digital identities.
               </p>
               
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 mb-16">
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -64,6 +66,16 @@ const Hero = () => {
                 >
                   View Work
                 </motion.button>
+              </div>
+
+              {/* Trusted By Section */}
+              <div className="pt-12 border-t border-slate-100">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by industry leaders</p>
+                <div className="flex flex-wrap gap-8 items-center opacity-40 grayscale group-hover:grayscale-0 transition-all">
+                  {['Microsoft', 'Google', 'Amazon', 'Meta'].map((brand) => (
+                    <span key={brand} className="text-xl font-black text-slate-900 tracking-tighter">{brand}</span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>

@@ -45,7 +45,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-24">
+        <div className="grid md:grid-cols-2 gap-24 mb-24">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -84,6 +84,16 @@ const Portfolio = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-slate-900 text-white px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl hover:bg-primary transition-colors"
+          >
+            View All Projects
+          </motion.button>
         </div>
       </div>
     </section>

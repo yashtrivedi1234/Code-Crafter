@@ -36,7 +36,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-12 mb-24">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -70,6 +70,16 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-slate-900 text-white px-12 py-6 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl hover:bg-primary transition-colors"
+          >
+            Read More Reviews
+          </motion.button>
         </div>
       </div>
     </section>

@@ -48,22 +48,35 @@ const Contact = () => {
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Full Name</label>
                   <input
                     type="text"
-                    className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold"
+                    placeholder="John Doe"
+                    className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold placeholder:text-slate-300"
                   />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Email</label>
                   <input
                     type="email"
-                    className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold"
+                    placeholder="john@example.com"
+                    className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold placeholder:text-slate-300"
                   />
                 </div>
+              </div>
+              <div className="space-y-3">
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Project Type</label>
+                <select className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold appearance-none cursor-pointer">
+                  <option>Web Development</option>
+                  <option>Mobile App</option>
+                  <option>UI/UX Design</option>
+                  <option>SEO / Marketing</option>
+                  <option>Other</option>
+                </select>
               </div>
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Message</label>
                 <textarea
                   rows={4}
-                  className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold resize-none"
+                  placeholder="Tell us about your project..."
+                  className="w-full bg-white border-b-2 border-slate-200 px-0 py-4 text-slate-900 focus:outline-none focus:border-primary transition-colors font-bold resize-none placeholder:text-slate-300"
                 />
               </div>
               <button className="w-full bg-primary text-white font-black uppercase tracking-widest py-6 rounded-full shadow-2xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-4">

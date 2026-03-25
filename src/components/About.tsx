@@ -55,7 +55,7 @@ const About = () => {
                 OF THE WEB.
               </h2>
               <p className="text-xl text-slate-500 mb-10 leading-relaxed font-medium">
-                We don't just build websites; we craft digital ecosystems. Our approach combines technical precision with creative flair to deliver results that matter.
+                We don't just build websites; we craft digital ecosystems. Our approach combines technical precision with creative flair to deliver results that matter. Since 2020, we've been helping businesses transform their digital presence through innovative technology and strategic design.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-8 mb-12">
@@ -65,14 +65,30 @@ const About = () => {
                   { title: 'Strategy', desc: 'Data-driven decisions for maximum impact.' },
                   { title: 'Support', desc: 'We are your long-term digital partners.' }
                 ].map((item, index) => (
-                  <div key={index} className="space-y-2">
+                  <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="space-y-2"
+                  >
                     <div className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                      </div>
                       <h4 className="font-bold text-slate-900 uppercase tracking-wider text-sm">{item.title}</h4>
                     </div>
                     <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
+                  </motion.div>
                 ))}
+              </div>
+
+              <div className="p-8 bg-white rounded-[32px] border border-slate-100 mb-12 shadow-sm">
+                <h4 className="text-lg font-black text-slate-900 mb-4 uppercase tracking-tight">Our Core Philosophy</h4>
+                <p className="text-slate-500 text-sm leading-relaxed italic">
+                  "We believe that every digital touchpoint is an opportunity to build trust. Our mission is to create experiences that are not only functional but also emotionally resonant."
+                </p>
               </div>
 
               <button className="group flex items-center gap-4 text-primary font-black uppercase tracking-widest text-sm">
